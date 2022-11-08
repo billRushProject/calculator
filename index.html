@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logoBigPTR_Black_Roman.png" type="image/icon type">
+    <title>1973 calulator</title>
+</head>
+<style>
+    /*Color
+    #217074
+    #37745B
+    #8B9D77
+    #E7EAEF
+    #EDC5AB
+    */
+body{
+    margin:0px; 
+    background-color: #217074;
+    color:#EDC5AB;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+#color1{
+    color:#217074;
+}
+#color2{
+    color:#37745B;
+}
+#color3{
+    color:#8B9D77;
+}
+#color4{
+    color:#E7EAEF;
+}
+#color5{
+    color:#EDC5AB;
+}
+.white{color: #FFFFFF;}
+.grey{color: #C0C0C0;}
+.black{color: #000000;}
+.calculator{
+    width: 500px;
+    padding: 15px 5px;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #8B9D77;
+    border-radius: 5px;
+    background-color: #37745B;
+    
+}
+.flex-elemenet, .timeperiod{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+.flex-elemenet{
+    width: 400px;
+    padding: 15px 45px;
+}
+h2{
+    margin: auto;
+}
+.title{
+    font-size: 20px;
+}
+
+#price, #startTime, #endTime, #numberOfpeople, #date{
+    border: 1px solid #000000;
+    width: 100px;
+    padding: 8px;
+}
+input[type='checkbox'] {
+         width: 20px;
+         height: 20px;
+}
+.endOfForm{
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    width: 100%;
+    justify-content: space-around;
+}
+.drinks{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+}
+button{
+    background-color: #217074;
+    border:5px solid #edc5ab;
+    cursor: pointer;
+    font-size: larger;
+    border-radius: 5px;
+    color: #edc5ab;
+    padding: 10px 15px;
+}
+button:hover{
+    background-color: #edc5ab;
+    border:5px solid #217074;
+    color: #217074;
+}
+.getAddressBtn{
+    background-color: #217074;
+}
+#unlimitedDrink{
+    border: 0px;
+    background-color: #edc5ab;
+}
+@media only screen and (max-width: 500px) {
+    .calculator{
+    position: relative;
+    width: 350px;
+    padding: 15px 0px;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #8B9D77;
+    border-radius: 5px;
+    background-color: #37745B;   
+    }
+    .flex-elemenet{
+        width: 300px;
+        padding: 10px 15px;
+    }
+    #price, #startTime, #endTime, #numberOfpeople, #date{
+        border: 1px solid #000000;
+        width: 100px;
+    }
+}
+</style>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="flex-elemenet">
+                <h2>1973 calculator</h2>
+            </div>
+            <!--
+            <div class="flex-elemenet">
+                <div class="title">Price per hours</div>
+                <div class="price">
+                    <input type="number" id="price">
+                </div>
+            </div>-->
+            <div class="flex-elemenet">
+                <div class="title">Date</div>
+                <div class="price">
+                    <input type="date" id="date" required>
+                </div>
+            </div>
+            <div class="flex-elemenet">
+                <div class="title">Number of people</div>
+                <div class="price">
+                    <input type="number" id="numberOfpeople" required>
+                </div>
+            </div>
+            <div class="flex-elemenet timeperiod">
+                <div>
+                    <div class="title" >Start Time</div>
+                </div>
+                <div>
+                    <div class="startTime" >
+                        <input type="time" id="startTime" required>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-elemenet timeperiod ">
+                <div>
+                    <div class="title">End Time</div>
+                </div>
+                <div>
+                    <div class="endTime">
+                        <input type="time" id="endTime" required>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-elemenet drink">
+                <div class="title drinks" >
+                    <label class="drinklebel" for="unlimitedDrink">Drinks</label>
+                        <input type="checkbox"  name="unlimitedDrink" id="unlimitedDrink">
+                    
+                </div>
+            </div>
+            <div class="flex-elemenet timeperiod endOfForm">
+                <div class="flex-elemenet ">
+                    <div class="button getPriceBtn"><button onclick=getResult()>GetPrice</button></div>
+                </div>    
+                <div class="flex-elemenet ">
+                    <div class="button getAddressBtn"><button onclick=getAddress()>Address</button></div>
+                </div> 
+            </div>
+        
+        </div>
+        <div class="output">
+            <div class="period"></div>
+            <div class="hours"></div>
+            <div class="drink"></div>
+            <div class="pricePerHours"></div>
+        </div>
+    </div>
+    <!--
+        🖤🤍歡迎黎到19731️⃣9️⃣7️⃣3️⃣
+        ——————————————
+        🤍🖤最低消費75一個鐘🖤🤍
+        平日 6個鐘以上人頭15一個鐘1️⃣
+            6個鐘以下人頭20一個鐘9️⃣
+        假日 6個鐘以上人頭20一個鐘7️⃣
+            6個鐘以下人頭25一個鐘3️⃣
+        任飲嘅話人頭+20雞😗
+        10個鐘以上9折✅✅🫡🫡
+        🤓🤓預約🤓🤓
+        時間: 
+        人數:
+        總數: + 按金
+    -->
+    <script>
+        function getResult(){
+            var date0= document.getElementById("date").value;
+            var startTime=document.getElementById("startTime").value;
+            var endTime=document.getElementById("endTime").value;
+            var noPeople =+document.getElementById("numberOfpeople").value;
+            var addDrink=+getCheck();
+            var hours=+getHours();
+            var price=+getPrice();
+            console.log("price "+price);
+            console.log("hours "+hours);
+            console.log("noPeople "+noPeople);
+            //price per hours
+            var result=price*hours;
+            var drinkPrice=addDrink*noPeople;
+            result+=drinkPrice;
+            if(hours>9){
+                result=result*0.9
+            }
+            var output= `
+                            🖤🤍歡迎黎到19731️⃣9️⃣7️⃣3️⃣
+                ——————————————
+                🤍🖤最低消費75一個鐘🖤🤍
+                平日 6個鐘以上人頭15一個鐘1️⃣
+                    6個鐘以下人頭20一個鐘9️⃣
+                假日 6個鐘以上人頭20一個鐘7️⃣
+                    6個鐘以下人頭25一個鐘3️⃣
+                任飲嘅話人頭+20雞😗
+                10個鐘以上9折✅✅🫡🫡
+                🤓🤓預約🤓🤓
+                日期: ${date0}
+                時間: ${startTime} - ${endTime}
+                人數: ${noPeople}
+                人均: ${result/noPeople}
+                總數: ${result}+ 按金 600`
+            alert(output);
+            navigator.clipboard.writeText(output);
+        }
+        function getAddress(){
+            var output= `🖤🤍歡迎黎到19731️⃣9️⃣7️⃣3️⃣
+            ——————————————
+            按金$600🀄️
+            地址:貴豐工業大廈 10樓B座 FG室
+            電子密碼:8521973
+            Wifi:1973-WiFi
+            Pw:08521973
+            入到裏面請除鞋放係鞋櫃🤢每次都會清潔🧽
+            如需臨時加鐘請WhatsApp 店主🥰
+            🚭場內嚴禁吸煙、有需要請到大門後樓梯🚭罰$1500(電子煙除外)
+            請勿熄去或觸碰CCTV 如發現按金將不退回🥲
+            請勿破壞場內設施，如有損壞需按價賠償🥲
+            離開時還原場地🙆‍♂️
+            請關上冷氣❄️
+            (否則會扣除按金100)
+            及帶走所有垃圾
+            (否則會扣除按金50)📦
+            電梯位置有大垃圾桶🤓
+            否則會收取清潔費🧹🧽
+            最後玩得開心啲🥰🥰`
+            navigator.clipboard.writeText(output);
+        }
+        function getPrice(){
+            var day=+getDateDay();
+            var hours=+getHours();
+            var tempPrice=0;
+            var tempPeople =+document.getElementById("numberOfpeople").value;
+            if((day===0||day===5||day==6)&hours>5){
+                tempPrice=20;
+            }else if((day===0||day===5||day==6)&hours<6){
+                tempPrice=25;
+            }else if(!(day===0||day===5||day==6)&hours>5){
+                tempPrice=15;
+            }else if(!(day===0||day===5||day==6)&hours<6){
+                tempPrice=20;
+            }
+            if(tempPrice*tempPeople>75){
+                return tempPrice*tempPeople;
+            }else{
+                return 75;
+            }
+        }
+        function getDateDay(){
+            var date = document.getElementById("date").value;
+            var getday=new Date (date)
+            return Number(getday.getDay())
+            
+        }
+        function getCheck(){
+            var trueDrink= document.getElementById("unlimitedDrink");
+            if(trueDrink.checked){
+                return Number(20);
+            }
+            return Number(0);
+        }
+        function getHours(){
+            var startTime=document.getElementById("startTime").value.split(':');
+            var endTime=document.getElementById("endTime").value.split(':');
+            var result=Number(endTime[0])-Number(startTime[0]);
+            if (result<0){result+=24;}
+            return result;
+        }
+
+
+    </script>
+</body>
+</html>
