@@ -5,135 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="icon" href="logoBigPTR_Black_Roman.png" type="image/icon type">
+    <link rel="stylesheet" href="design.css">
     <title>1973 calulator</title>
 </head>
 <style>
-    /*Color
-    #217074
-    #37745B
-    #8B9D77
-    #E7EAEF
-    #EDC5AB
-    */
-body{
-    margin:0px; 
-    background-color: #217074;
-    color:#EDC5AB;
-}
-.container{
-    display: flex;
-    flex-direction: column;
-}
-#color1{
-    color:#217074;
-}
-#color2{
-    color:#37745B;
-}
-#color3{
-    color:#8B9D77;
-}
-#color4{
-    color:#E7EAEF;
-}
-#color5{
-    color:#EDC5AB;
-}
-.white{color: #FFFFFF;}
-.grey{color: #C0C0C0;}
-.black{color: #000000;}
-.calculator{
-    width: 500px;
-    padding: 15px 5px;
-    margin-top: 10%;
-    margin-left: auto;
-    margin-right: auto;
-    border: 2px solid #8B9D77;
-    border-radius: 5px;
-    background-color: #37745B;
-    
-}
-.flex-elemenet, .timeperiod{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-}
-.flex-elemenet{
-    width: 400px;
-    padding: 15px 45px;
-}
-h2{
-    margin: auto;
-}
-.title{
-    font-size: 20px;
-}
 
-#price, #startTime, #endTime, #numberOfpeople, #date{
-    border: 1px solid #000000;
-    width: 100px;
-    padding: 8px;
-}
-input[type='checkbox'] {
-         width: 20px;
-         height: 20px;
-}
-.endOfForm{
-    display: flex;
-    flex-direction: row;
-    padding: 0px;
-    width: 100%;
-    justify-content: space-around;
-}
-.drinks{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content:center;
-}
-button{
-    background-color: #217074;
-    border:5px solid #edc5ab;
-    cursor: pointer;
-    font-size: larger;
-    border-radius: 5px;
-    color: #edc5ab;
-    padding: 10px 15px;
-}
-button:hover{
-    background-color: #edc5ab;
-    border:5px solid #217074;
-    color: #217074;
-}
-.getAddressBtn{
-    background-color: #217074;
-}
-#unlimitedDrink{
-    border: 0px;
-    background-color: #edc5ab;
-}
-@media only screen and (max-width: 500px) {
-    .calculator{
-    position: relative;
-    width: 350px;
-    padding: 15px 0px;
-    margin-top: 10%;
-    margin-left: auto;
-    margin-right: auto;
-    border: 2px solid #8B9D77;
-    border-radius: 5px;
-    background-color: #37745B;   
-    }
-    .flex-elemenet{
-        width: 300px;
-        padding: 10px 15px;
-    }
-    #price, #startTime, #endTime, #numberOfpeople, #date{
-        border: 1px solid #000000;
-        width: 100px;
-    }
-}
 </style>
 <body>
     <div class="container">
@@ -228,7 +106,11 @@ button:hover{
             navigator.clipboard.writeText(output);
         }
         function getAddress(){
-            var output= `🖤🤍歡迎黎到19731️⃣9️⃣7️⃣3️⃣\n——————————————\n按金$600🀄️\n地址:貴豐工業大廈 10樓B座 FG室\n電子密碼:8521973\nWifi:1973-WiFi\nPw:08521973\n入到裏面請除鞋放係鞋櫃🤢每次都會清潔🧽\n如需臨時加鐘請WhatsApp 店主🥰\n🚭場內嚴禁吸煙、有需要請到大門後樓梯\n🚭罰$1500(電子煙除外)\n請勿熄去或觸碰CCTV 如發現按金將不退回🥲\n請勿破壞場內設施，如有損壞需按價賠償🥲\n離開時還原場地🙆‍♂️\n離開時還原場地🙆‍♂️✅✅請記得記得熄冷氣✅✅❄️(否則睇cam發現後會扣除按金100)❄️\n(否則會扣除按金100)\n及帶走所有垃圾\n(否則會扣除按金50)📦\n電梯位置有大垃圾桶🤓\n否則會收取清潔費🧹🧽(扣除150按金)\n最後玩得開心啲🥰🥰`
+            var output= `🖤🤍歡迎黎到19731️⃣9️⃣7️⃣3️⃣\n——————————————\n按金$600🀄️\n地址:貴豐工業大廈 10樓B座
+            FG室\n電子密碼:8521973\nWifi:1973-WiFi\nPw:08521973\n入到裏面請除鞋放係鞋櫃🤢每次都會清潔🧽\n如需臨時加鐘請WhatsApp
+            店主🥰\n🚭場內嚴禁吸煙、有需要請到大門後樓梯\n🚭罰$1500(電子煙除外)\n請勿熄去或觸碰CCTV
+            如發現按金將不退回🥲\n請勿破壞場內設施，如有損壞需按價賠償🥲\n離開時還原場地🙆‍♂️\n離開時還原場地🙆‍♂️✅✅請記得記得熄冷氣✅✅❄️(否則睇cam發現後會扣除按金100)❄️\n(否則會扣除按金100)\n及帶走所有垃圾\n(否則會扣除按金50)📦\n電梯位置有大垃圾桶🤓\n否則會收取清潔費🧹🧽(扣除150按金)\n最後玩得開心啲🥰🥰\n\n常見場地問題: https://billrushproject.github.io/tutorial/
+            `
             navigator.clipboard.writeText(output);
         }
         function getPrice(){

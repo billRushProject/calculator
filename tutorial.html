@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <title>1973 calulator</title>
+</head>
+<style>    
+.content{
+width: 700px;
+padding: 15px 5px;
+margin-top: 10%;
+margin-left: auto;
+margin-right: auto;
+border: 2px solid #8B9D77;
+border-radius: 5px;
+background-color: #37745B;
+
+}
+       .flex-elemenet{
+       display: flex;
+       flex-direction: row;
+       
+       justify-content:center;
+       }
+       .flex-elemenet{
+        width: 100%;
+        margin: 15px auto ;
+        padding: 0px;
+       }
+       button{
+       background-color: #217074;
+       border:5px solid #edc5ab;
+       cursor: pointer;
+       font-size: larger;
+       border-radius: 5px;
+       color: #edc5ab;
+       margin: 5px auto;
+       padding: 5px 8px;
+       }
+       .title{
+        
+        border-bottom: 5px solid #edc5ab;
+        display: inline;
+            padding: 5px 8px;
+            margin: 5px auto;
+            font-size:large;
+            
+       }
+       .videoShow{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+       }
+       .getAddressBtn {
+       background-color: transparent;
+       }
+       @media only screen and (max-width: 500px) {
+       .content{
+       position: relative;
+       width: 350px;
+       }
+       .flex-elemenet{
+       width: 300px;
+       padding: 10px 15px;
+       }
+       #price, #startTime, #endTime, #numberOfpeople, #date{
+        border: 1px solid #000000;
+        width: 100px;
+       }
+       }
+</style>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="flex-elemenet">
+                <h2>1973 Tutorial</h2>
+            </div>
+           
+            <div class="flex-elemenet timeperiod endOfForm">
+                <div class="flex-elemenet">
+                    <div class="button getPriceBtn"><button onclick=getvideo01()>無花轉有花</button></div>
+                </div>    
+                <div class="flex-elemenet ">
+                    <div class="button getAddressBtn"><button onclick=getvideo02()>有花轉無花</button></div>
+                </div> 
+                <div class="flex-elemenet ">
+                    <div class="button getAddressBtn"><button onclick=getvideo03()>唱K機setUp</button></div>
+                </div>
+                <div class="flex-elemenet ">
+                    <div class="button getAddressBtn"><button onclick=getvideo04()>電視轉設備</button></div>
+                </div>
+            </div>
+            <div id="video01" class="videoShow">
+                
+                <div class="title">無花轉有花</div>
+                <video width="100%" height="240" controls>
+                    <source src="video/01.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div id="video02" class="videoShow">
+                
+                <div class="title">有花轉無花</div>
+                <video width="100%" height="240" controls>
+                    <source src="video/02.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div id="video03" class="videoShow">
+                <div class="title">唱K機setUp</div>
+                <video width="100%" height="240" controls>
+                    <source src="video/03.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div id="video04" class="videoShow">
+                <div class="title">電視轉HDMI Output</div>
+                <video width="100%" height="240" controls>
+                    <source src="video/04.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+
+        function hideAllvideo(){
+            var videos=document.getElementsByClassName("videoShow");
+            
+            for(let i=0;i<videos.length;i++){
+                videos[i].style.display="none"
+            }
+        }
+        function getvideo01(){
+            hideAllvideo();
+            var showVideo=document.getElementById("video01");
+            showVideo.style.display="flex";
+            
+        }
+        function getvideo02(){
+            hideAllvideo();
+            var showVideo=document.getElementById("video02");
+            showVideo.style.display="flex";
+        }
+        function getvideo03(){
+        hideAllvideo();
+        var showVideo=document.getElementById("video03");
+        showVideo.style.display="flex";
+        }
+         function getvideo04(){
+         hideAllvideo();
+         var showVideo=document.getElementById("video04");
+         showVideo.style.display="flex";
+         }
+        getvideo03()
+    </script>
+</body>
+</html>
