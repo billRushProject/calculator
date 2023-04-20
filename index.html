@@ -72,6 +72,9 @@
                 <div class="flex-elemenet ">
                     <div class="button getAddressBtn"><button onclick=getAddress()>Address</button></div>
                 </div> 
+                <div class="flex-elemenet ">
+                    <div class="button getAddressBtn"><button onclick=qanda()>qanda</button></div>
+                </div>
             </div>
         
         </div>
@@ -155,8 +158,9 @@
             if (result<0){result+=24;}
             return result;
         }
-
-
+        function qanda(){
+            window.location.href = "tutorial.html";
+        }
     </script>
 </body>
 </html>
